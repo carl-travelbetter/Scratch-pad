@@ -46,11 +46,25 @@ function createMonthOutput(date)
   //Work out how many years to go (for mutiplication factor of months) then add the difference in the month values;
   //e.g. (2027 - 2025) * 12 = 24 months, June - December, 5 - 11 = -6, therefore 24 - 6 = 18 months
   let monthsDiff = ((date.getYear() - today.getYear()) * 12) + (date.getMonth() - today.getMonth());
-  console.log("Months Difference "+monthsDiff);
+  //Move on today by the months to go so only days left.
+  let tempDate = new Date();
+  tempDate.setMonth(tempDate.getMonth()+monthsDiff);
+
+  //set a ms convert value
+  msPerDay = 1000 * 60 * 60 * 24;
+  
+  //calculate the total days remaining
+  let totalDaysRemaining = Math.floor((date - tempDate) / msPerDay);
+
+  //calculate the weeks remaining
+  let weeks = Math.floor(totalDaysRemaining / 7);
+
+  //calculate the remainder of days
+  let days = totalDaysRemaining % 7;
 
   const monthOutput = document.getElementById("month-output");
   monthOutput.innerHTML = "";
   const monthDiffOutput = document.createElement("p");
-  monthDiffOutput.textContent = "Difference in Months "+monthsDiff;
+  monthDiffOutput.textContent = monthsDiff+" Months "+weeks+" Weeks "+days+" Days to go.";
   monthOutput.appendChild(monthDiffOutput);
 }
