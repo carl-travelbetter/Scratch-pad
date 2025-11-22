@@ -4,6 +4,11 @@
       <title>Countdown</title>
     </head>
     <body>
+      <div class="display-card" id="create-countdown" hidden>
+        <label for="trip-date">Select your trip date</label>
+        <input type="date" name="tripDate" id="trip-date" />
+        <button class="control-btn" onclick="createCountdown()">Create Countdown</button>
+      </div>
       <div class="countdown" id="output"></div>
     </body>
   </html>
