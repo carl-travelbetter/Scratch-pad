@@ -30,6 +30,7 @@ function createCountdown()
   //Get the difference between the full days and the date, then calculate the full hours. 
   
   const output = document.getElementById("output");
+  output.innerHTML = "";
   const timer = document.createElement("p");
   timer.textContent = "Days "+days+" hrs "+hours+" mins "+minutes+" secs "+seconds;
   output.appendChild(timer);
@@ -46,4 +47,10 @@ function createMonthOutput(date)
   //e.g. (2027 - 2025) * 12 = 24 months, June - December, 5 - 11 = -6, therefore 24 - 6 = 18 months
   let monthsDiff = ((date.getYear() - today.getYear()) * 12) + (date.getMonth() - today.getMonth());
   console.log("Months Difference "+monthsDiff);
+
+  const monthOutput = document.getElementById("month-output");
+  monthOutput.innerHTML = "";
+  const monthDiffOutput = document.createElement("p");
+  monthDiffOutput.textContent = "Difference in Months "+monthsDiff;
+  monthoutput.appendChild(monthDiffOutput);
 }
