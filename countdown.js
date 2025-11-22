@@ -33,5 +33,17 @@ function createCountdown()
   const timer = document.createElement("p");
   timer.textContent = "Days "+days+" hrs "+hours+" mins "+minutes+" secs "+seconds;
   output.appendChild(timer);
-  
+  createMonthOutput(date);
+}
+
+function createMonthOutput(date)
+{
+  console.log("Create Month Output");
+  let today = new Date();
+  console.log("Today month "+today.getMonth());
+  console.log("Date selected month "+date.getMonth());
+  //Work out how many years to go (for mutiplication factor of months) then add the difference in the month values;
+  //e.g. (2027 - 2025) * 12 = 24 months, June - December, 5 - 11 = -6, therefore 24 - 6 = 18 months
+  let monthsDiff = ((date.getYear() - today.getYear()) * 12) + (date.getMonth() - today.getMonth());
+  console.log("Months Difference "+monthsDiff);
 }
