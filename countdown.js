@@ -48,8 +48,20 @@ function createMonthOutput(date)
   let monthsDiff = ((date.getYear() - today.getYear()) * 12) + (date.getMonth() - today.getMonth());
   //Move on today by the months to go so only days left.
   let tempDate = new Date();
-  tempDate.setMonth(tempDate.getMonth()+monthsDiff);
+  tempDate.setMonth(today.getMonth()+monthsDiff);
 
+  //Work out the whole month count 
+  if (date.getDate() < today.getDate())
+  {
+    monthsDiff--;
+  }
+
+  //If the monthDiff is set to -1 then move to 0
+  if (monthsDiff < 0)
+  {
+    monthsDiff = 0;
+  }
+  
   //set a ms convert value
   msPerDay = 1000 * 60 * 60 * 24;
   
