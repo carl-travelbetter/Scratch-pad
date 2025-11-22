@@ -62,6 +62,7 @@ function createMonthOutput(date)
   //calculate the remainder of days
   let days = totalDaysRemaining % 7;
 
+  //Output the data
   const monthOutput = document.getElementById("month-output");
   monthOutput.innerHTML = "";
   const monthDiffOutput = document.createElement("p");
