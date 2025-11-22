@@ -46,9 +46,7 @@ function createMonthOutput(date)
   //Work out how many years to go (for mutiplication factor of months) then add the difference in the month values;
   //e.g. (2027 - 2025) * 12 = 24 months, June - December, 5 - 11 = -6, therefore 24 - 6 = 18 months
   let monthsDiff = ((date.getYear() - today.getYear()) * 12) + (date.getMonth() - today.getMonth());
-  //Move on today by the months to go so only days left.
-  let tempDate = new Date();
-  tempDate.setMonth(today.getMonth()+monthsDiff);
+  
 
   //Work out the whole month count 
   if (date.getDate() < today.getDate())
@@ -64,6 +62,10 @@ function createMonthOutput(date)
   
   //set a ms convert value
   msPerDay = 1000 * 60 * 60 * 24;
+
+  //Move on today by the months to go so only days left.
+  let tempDate = new Date();
+  tempDate.setMonth(today.getMonth()+monthsDiff);
   
   //calculate the total days remaining
   let totalDaysRemaining = Math.floor((date - tempDate) / msPerDay);
