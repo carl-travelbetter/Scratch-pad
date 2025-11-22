@@ -52,5 +52,5 @@ function createMonthOutput(date)
   monthOutput.innerHTML = "";
   const monthDiffOutput = document.createElement("p");
   monthDiffOutput.textContent = "Difference in Months "+monthsDiff;
-  monthoutput.appendChild(monthDiffOutput);
+  monthOutput.appendChild(monthDiffOutput);
 }
