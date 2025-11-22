@@ -2,9 +2,13 @@
   <html lang="en">
     <head>
       <title>Countdown</title>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta charset="UTF-8">
+      <link rel="stylesheet" href="style.css">
+      <script href="countdown.js" defer>
     </head>
     <body>
-      <div class="display-card" id="create-countdown" hidden>
+      <div class="display-card" id="create-countdown">
         <label for="trip-date">Select your trip date</label>
         <input type="date" name="date" id="date" />
         <button class="control-btn" onclick="createCountdown()">Create Countdown</button>
