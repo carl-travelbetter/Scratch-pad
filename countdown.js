@@ -9,5 +9,9 @@ function createCountdown()
   let today = new Date();
   let secondsBetween = date - today;
   let daysBetween = Math.floor(secondsBetween / (1000 * 60 * 60 *24));
+  const output = document.getElementById("output");
+  const timer = document.createElement("p");
+  timer.textContent = "Days "+daysBetween;
+  output.appendChild(timer);
   
 }
