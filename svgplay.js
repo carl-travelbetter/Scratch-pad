@@ -7,6 +7,6 @@ circle.addEventListener("click", () => {
       
       console.log("Circle Expense Button Clicked");
       radius += 2;
-      circle.setAttribute("r", "60");
+      circle.setAttribute("fill", "gold");
       console.log('Radius is now 60 '+radius);
       });
