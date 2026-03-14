@@ -3,6 +3,8 @@ console.log('SVG Play');
 const circle = document.getElementById('circle');
 let radius = 40;
 
+const button = document.getElementById('color-button');
+
 circle.addEventListener("click", () => {
       
       console.log("Circle Expense Button Clicked");
@@ -10,3 +12,11 @@ circle.addEventListener("click", () => {
       circle.setAttribute("fill", "gold");
       console.log('Radius is now gold fill '+radius);
       });
+
+button.addEventListener('click', changeColor);
+
+function changeColor()
+{
+      console.log('Change Colour');
+      circle.setAttribute("fill", "gold");
+}
