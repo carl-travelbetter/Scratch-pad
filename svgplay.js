@@ -1,6 +1,7 @@
 console.log('SVG Play');
 
 const circle = document.getElementById('circle');
+console.log(circle);
 let radius = 40;
 
 const button = document.getElementById('color-button');
@@ -18,5 +19,5 @@ button.addEventListener('click', changeColor);
 function changeColor()
 {
       console.log('Change Colour');
-      circle.setAttribute("fill", "gold");
+      circle.style.fill = "gold";
 }
